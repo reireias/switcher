@@ -1,0 +1,14 @@
+[
+  {
+    "name": "roleA",
+    "roleName": "roleA",
+    "account": "99999999",
+    "color": "F2B0A9"
+  },
+  {
+    "name": "roleB",
+    "roleName": "roleB",
+    "account": "88888888",
+    "color": "FBBF93"
+  }
+]
