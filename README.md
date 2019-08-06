@@ -2,6 +2,12 @@
 
 AWS switch-role page URL generator.
 
+- Write your switch-role config in `~/.switcherrc.json`
+
+- `switcher` shows switch-role settings with incremental search
+
+- Selected switch-role config will be opend in browser
+
 ## install
 
 1. download from [release page](https://github.com/reireias/switcher/releases)
