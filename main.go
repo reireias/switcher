@@ -6,7 +6,9 @@ import (
 	"io/ioutil"
 	"log"
 	"net/url"
+	"os/exec"
 	"os/user"
+	"runtime"
 
 	fuzzyfinder "github.com/ktr0731/go-fuzzyfinder"
 )
@@ -27,6 +29,24 @@ type AWSAccount struct {
 	RoleName string `json:"roleName"`
 	Account  string `json:"account"`
 	Color    string `json:"color"`
+}
+
+func openbrowser(url string) {
+	var err error
+
+	switch runtime.GOOS {
+	case "linux":
+		err = exec.Command("xdg-open", url).Start()
+	case "windows":
+		err = exec.Command("rundll32", "url.dll,FileProtocolHandler", url).Start()
+	case "darwin":
+		err = exec.Command("open", url).Start()
+	default:
+		err = fmt.Errorf("unsupported platform")
+	}
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func main() {
@@ -65,5 +85,5 @@ func main() {
 	query.Add("color", color)
 	switchURL.RawQuery = query.Encode()
 
-	fmt.Println(switchURL)
+	openbrowser(switchURL.String())
 }
