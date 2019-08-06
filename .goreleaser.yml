@@ -1,0 +1,10 @@
+---
+builds:
+  - main: main.go
+    binary: switcher
+    goos:
+      - windows
+      - darwin
+      - linux
+    goarch:
+      - amd64
