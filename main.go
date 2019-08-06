@@ -13,6 +13,14 @@ import (
 
 const baseURL = "https://signin.aws.amazon.com/switchrole"
 
+var colorMap = map[string]string{
+	"red":    "F2B0A9",
+	"orange": "FBBF93",
+	"yellow": "FAD791",
+	"green":  "B7CA9D",
+	"blue":   "99BCE3",
+}
+
 // AWSAccount is struct for json
 type AWSAccount struct {
 	Name     string `json:"name"`
@@ -53,7 +61,8 @@ func main() {
 	query.Add("displayName", accounts[index].Name)
 	query.Add("roleName", accounts[index].RoleName)
 	query.Add("account", accounts[index].Account)
-	query.Add("color", accounts[index].Color)
+	color, _ := colorMap[accounts[index].Color]
+	query.Add("color", color)
 	switchURL.RawQuery = query.Encode()
 
 	fmt.Println(switchURL)

@@ -11,9 +11,8 @@ AWS switch-role page URL generator.
 ## color
 valid colors are follows
 
-
-| red    | F2B0A9 |
-| orange | FBBF93 |
-| yellow | FAD791 |
-| green  | B7CA9D |
-| blue   | 99BCE3 |
+- red
+- prange
+- yellow
+- green
+- blue
