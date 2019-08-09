@@ -8,7 +8,13 @@ AWS switch-role page URL generator.
 
 - Selected switch-role config will be opend in browser
 
-## install
+## Install
+
+```sh
+go get -u github.com/reireias/switcher
+```
+
+## install from relase
 
 1. download from [release page](https://github.com/reireias/switcher/releases)
 
@@ -21,6 +27,25 @@ AWS switch-role page URL generator.
 1. clone this repository
 
 2. `make && make install`
+
+## .switcherrc.json example
+
+```json
+[
+  {
+    "name": "roleA",
+    "roleName": "roleA",
+    "account": "99999999",
+    "color": "red"
+  },
+  {
+    "name": "roleB",
+    "roleName": "roleB",
+    "account": "88888888",
+    "color": "blue"
+  }
+]
+```
 
 ## color
 valid colors are follows
