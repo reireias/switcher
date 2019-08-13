@@ -29,3 +29,21 @@ lint: devel-deps
 .PHONY: install
 install:
 	@go install $(LDFLAGS) ./cmd/switcher
+
+.PHONY: bump-major
+bump-major:
+	@gobump major -w cmd/switcher
+
+.PHONY: bump-minor
+bump-minor:
+	@gobump minor -w cmd/switcher
+
+.PHONY: bump-patch
+bump-patch:
+	@gobump patch -w cmd/switcher
+
+.PHONY: release
+release:
+	@git tag v$(VERSION)
+	@git push --tags
+	goreleaser --rm-dist
