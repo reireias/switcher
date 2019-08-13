@@ -7,16 +7,16 @@ export GO111MODULE=on
 
 .PHONY: deps
 deps:
-	go get -v -d
+	@go get -v -d
 
 .PHONY: deps
 devel-deps: deps
-	GO111MODULE=off go get \
+	@GO111MODULE=off go get \
 		golang.org/x/lint/golint \
 		github.com/motemen/gobump/cmd/gobump
 
 bin/%: cmd/%/main.go deps
-	go build -ldflags $(LDFLAGS) -o $@ $<
+	@go build -ldflags $(LDFLAGS) -o $@ $<
 
 .PHONY: build
 build: bin/switcher
@@ -25,3 +25,7 @@ build: bin/switcher
 lint: devel-deps
 	go vet ./...
 	golint -set_exit_status ./...
+
+.PHONY: install
+install:
+	@go install $(LDFLAGS) ./cmd/switcher
