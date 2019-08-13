@@ -5,10 +5,9 @@ go:
 env:
   - GO111MODULE=on
 before_script:
-  - go get -v golang.org/x/lint/golint
+  - make devel-deps
 script:
-  - go vet ./...
-  - diff <(golint ./...) <(printf "")
+  - make lint
 notifications:
   email: false
   slack:

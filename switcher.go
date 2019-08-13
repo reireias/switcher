@@ -1,4 +1,4 @@
-package main
+package switcher
 
 import (
 	"encoding/json"
@@ -49,7 +49,8 @@ func openbrowser(url string) {
 	}
 }
 
-func main() {
+// Run executes switcher
+func Run() {
 	usr, err := user.Current()
 	if err != nil {
 		log.Fatal(err)
