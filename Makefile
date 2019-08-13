@@ -1,5 +1,5 @@
 NAME := switcher
-VERSION := $(godump show -r cmd/switcher)
+VERSION := $(shell gobump show -r cmd/switcher)
 REVISION := $(shell git rev-parse --short HEAD)
 LDFLAGS := "-X main.version=$(VERSION) -X main.revision=$(REVISION)"
 
