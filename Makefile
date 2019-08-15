@@ -30,16 +30,16 @@ lint: devel-deps
 install:
 	@go install $(LDFLAGS) ./cmd/switcher
 
-.PHONY: bump-major
-bump-major:
+.PHONY: version-up-major
+version-up-major:
 	@gobump major -w cmd/switcher
 
-.PHONY: bump-minor
-bump-minor:
+.PHONY: version-up-minor
+version-up-minor:
 	@gobump minor -w cmd/switcher
 
-.PHONY: bump-patch
-bump-patch:
+.PHONY: version-up-patch
+version-up-patch:
 	@gobump patch -w cmd/switcher
 
 .PHONY: release
