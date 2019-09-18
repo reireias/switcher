@@ -12,7 +12,7 @@ AWS switch-role page URL generator.
 ## Install
 
 ```sh
-go get -u github.com/reireias/switcher
+go get -u github.com/reireias/switcher/cmd/switcher
 ```
 
 ## install from relase
