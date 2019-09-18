@@ -9,6 +9,7 @@ import (
 	"os/exec"
 	"os/user"
 	"runtime"
+	"strings"
 
 	fuzzyfinder "github.com/ktr0731/go-fuzzyfinder"
 )
@@ -67,9 +68,18 @@ func Run() {
 		log.Fatal(err)
 	}
 
-	index, err := fuzzyfinder.Find(accounts, func(i int) string {
-		return accounts[i].Name
-	})
+	index, err := fuzzyfinder.Find(
+		accounts,
+		func(i int) string {
+			return accounts[i].Name
+		},
+		fuzzyfinder.WithPreviewWindow(func(i, w, h int) string {
+			return fmt.Sprintf(strings.Repeat("\n", h-10)+"%s\n\naccount:  %s\nroleName: %s\ncolor:    %s",
+				accounts[i].Name,
+				accounts[i].Account,
+				accounts[i].RoleName,
+				accounts[i].Color)
+		}))
 	if err != nil {
 		log.Fatal(err)
 	}
