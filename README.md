@@ -3,6 +3,8 @@
 
 AWS switch-role page URL generator.
 
+![switcher](https://user-images.githubusercontent.com/24800246/65244109-c01de100-db24-11e9-97e2-ffc202dad623.gif)
+
 - Write your switch-role config in `~/.switcherrc.json`
 
 - `switcher` shows switch-role settings with incremental search
