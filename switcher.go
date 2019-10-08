@@ -74,6 +74,9 @@ func Run() {
 			return accounts[i].Name
 		},
 		fuzzyfinder.WithPreviewWindow(func(i, w, h int) string {
+			if i == -1 {
+				return ""
+			}
 			return fmt.Sprintf(strings.Repeat("\n", h-10)+"%s\n\naccount:  %s\nroleName: %s\ncolor:    %s",
 				accounts[i].Name,
 				accounts[i].Account,
