@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/reireias/switcher.svg?branch=master)](https://travis-ci.org/reireias/switcher)
+![test](https://github.com/reireias/switcher/workflows/test/badge.svg)
 # Switcher
 
 AWS switch-role page URL generator.
