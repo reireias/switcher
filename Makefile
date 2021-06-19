@@ -1,7 +1,4 @@
 NAME := switcher
-VERSION := $(shell gobump show -r cmd/switcher)
-REVISION := $(shell git rev-parse --short HEAD)
-LDFLAGS := "-X main.version=$(VERSION) -X main.revision=$(REVISION)"
 
 export GO111MODULE=on
 
@@ -16,7 +13,7 @@ devel-deps: deps
 		github.com/motemen/gobump/cmd/gobump
 
 bin/%: cmd/%/main.go deps
-	@go build -ldflags $(LDFLAGS) -o $@ $<
+	@go build
 
 .PHONY: build
 build: bin/switcher
@@ -28,7 +25,7 @@ lint: devel-deps
 
 .PHONY: install
 install:
-	@go install $(LDFLAGS) ./cmd/switcher
+	@go install ./cmd/switcher
 
 .PHONY: version-up-major
 version-up-major:
