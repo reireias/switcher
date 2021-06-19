@@ -1,4 +1,4 @@
-![test](https://github.com/reireias/switcher/workflows/test/badge.svg)
+[![main](https://github.com/reireias/switcher/actions/workflows/main.yml/badge.svg)](https://github.com/reireias/switcher/actions/workflows/main.yml)
 # Switcher
 
 AWS switch-role page URL generator.
