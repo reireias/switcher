@@ -41,9 +41,3 @@ version-up-minor:
 .PHONY: version-up-patch
 version-up-patch:
 	@gobump patch -w cmd/switcher
-
-.PHONY: release
-release:
-	@git tag v$(VERSION)
-	@git push --tags
-	goreleaser --rm-dist
