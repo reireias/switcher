@@ -5,20 +5,19 @@ on:
     branches:
       - master
   pull_request:
-    types:
-      - opened
-      - synchronize
-      - reopened
 
 jobs:
   main:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Pick go_version
+        id: go
+        run: echo "version=$(grep golang .tool-versions | awk '{print $2}')" >> $GITHUB_OUTPUT
       - name: Set up Go
         uses: actions/setup-go@v2
         with:
-          go-version: 1.16.5
+          go-version: ${{ steps.go.outputs.version }}
       - name: Install dependencies
         run: make devel-deps
       - name: Lint

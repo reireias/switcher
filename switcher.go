@@ -95,7 +95,7 @@ func Run() {
 	query.Add("displayName", accounts[index].Name)
 	query.Add("roleName", accounts[index].RoleName)
 	query.Add("account", accounts[index].Account)
-	color, _ := colorMap[accounts[index].Color]
+	color := colorMap[accounts[index].Color]
 	query.Add("color", color)
 	switchURL.RawQuery = query.Encode()
 
