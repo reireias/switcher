@@ -1,4 +1,4 @@
-module github.com/reireias/switcher/v2
+module github.com/reireias/switcher
 
 go 1.23.5
 

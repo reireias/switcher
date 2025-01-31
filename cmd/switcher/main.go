@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/reireias/switcher/v2"
+	"github.com/reireias/switcher"
 )
 
 func main() {
