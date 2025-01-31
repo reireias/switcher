@@ -19,4 +19,4 @@ lint: devel-deps
 
 .PHONY: install
 install:
-	@go install ./cmd/switcher
+	@go install

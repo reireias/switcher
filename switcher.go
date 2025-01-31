@@ -3,7 +3,7 @@ package switcher
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"os"
 	"log"
 	"net/url"
 	"os/exec"
@@ -57,7 +57,7 @@ func Run() {
 		log.Fatal(err)
 	}
 
-	bytes, err := ioutil.ReadFile(usr.HomeDir + "/.switcherrc.json")
+	bytes, err := os.ReadFile(usr.HomeDir + "/.switcherrc.json")
 	if err != nil {
 		log.Fatal(err)
 	}
