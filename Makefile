@@ -10,7 +10,7 @@ devel-deps: deps
 
 .PHONY: build
 build:
-	@go build -o bin/$(NAME) ./cmd/$(NAME)
+	@go build -o bin/$(NAME) ./v2/cmd/$(NAME)
 
 .PHONY: lint
 lint: devel-deps
