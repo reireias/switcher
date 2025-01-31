@@ -17,11 +17,11 @@ import (
 const baseURL = "https://signin.aws.amazon.com/switchrole"
 
 var colorMap = map[string]string{
-	"red":    "F2B0A9",
-	"orange": "FBBF93",
-	"yellow": "FAD791",
-	"green":  "B7CA9D",
-	"blue":   "99BCE3",
+	"red":    "ea7158",
+	"orange": "fbc8aa",
+	"yellow": "efda95",
+	"green":  "b4d699",
+	"blue":   "83d4e8",
 }
 
 // AWSAccount is struct for json
