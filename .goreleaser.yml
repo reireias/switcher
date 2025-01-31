@@ -1,6 +1,6 @@
 ---
 builds:
-  - main: cmd/switcher/main.go
+  - main: v2/cmd/switcher/main.go
     binary: switcher
     goos:
       - windows
